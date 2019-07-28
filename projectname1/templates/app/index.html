@@ -1,0 +1,29 @@
+{% extends 'shared/base.html' %}
+{% block title %}목록{% endblock %}
+{% block style %}
+{% endblock %}
+{% block body %}
+        <div style="width: 75%; text-align: right;">
+        <a href="/app/new">새로운 게시물 추가</a>
+        </div>
+        <button>
+
+        </button>
+        <center>
+        <div style="width: 50%;">
+        <table class="uk-table uk-table-hover">
+            <thead>
+            <td>★<td><h1 style="color:blue;">제목<td>삭제</td></h1></td>
+            </thead>
+            <tbody>
+                <div class="uk-animation-toggle" tabindex="0"></div>
+                <div class="uk-animation-fade"></div>
+                {% for board in boardlist %}
+                <tr><td>{{ forloop.counter }}<td><a href="/app/board/{{ board.id }}">{{ board.title }}></a><td><a href="/app/board/{{ board.id }}/delete">삭제</a></td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        </center>
+{% endblock %}
+
